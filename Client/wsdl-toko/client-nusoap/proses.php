@@ -8,7 +8,7 @@ if ($_POST['aksi'] == 'tambah') {
   );
 
   $abc -> tambah_data($data);
-  header('location: index.php?page-daftar-data');
+  header('location: index.php?page=daftar-data');
 } else if ($_POST['aksi'] == 'ubah') {
   $data = array(
     'id_barang' => $_POST['id_barang'],
