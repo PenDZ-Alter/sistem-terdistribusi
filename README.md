@@ -10,5 +10,11 @@ Ada beberapa hal yang perlu di perhatikan!
       ```bash
       openssl genrsa 2048
       ```
+      Jika terdapat error, gunakan perintah berikut : 
+      ```bash
+      sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get install openssl
+      ```
+      Masukan password dan kemudian jalankan perintah ssl sebelumnya!
     
     - Copy RSA Key ke Debian Server pada folder `jwt-toko` file `core.php` dan pada variabel `$key`
+3. Abaikan error pada file `nusoap.php` pada visual studio code
