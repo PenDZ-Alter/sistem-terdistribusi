@@ -36,7 +36,7 @@ $server -> register(
   'urn:ServerWSDL#tambah_data',
   'rpc',
   'encoded',
-  'tampil semua data'
+  'tambah data'
 );
 
 $server -> register(
@@ -47,7 +47,7 @@ $server -> register(
   'urn:ServerWSDL#ubah_data',
   'rpc',
   'encoded',
-  'tampil semua data'
+  'ubah data'
 );
 
 $server -> register(
@@ -58,7 +58,7 @@ $server -> register(
   'urn:ServerWSDL#hapus_data',
   'rpc',
   'encoded',
-  'tampil semua data'
+  'hapus data'
 );
 
 function filter($data)
