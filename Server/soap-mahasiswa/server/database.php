@@ -1,13 +1,13 @@
 <?php
 class Database
-{	private $host="192.168.194.242";	
+{	private $host="192.168.56.2";	
 	private $dbname="serviceserver";
 	private $conn;
 	
 	// koneksi ke database mysql di server
 	private $driver="mysql";
 	private $user="root";
-	private $password="QuadgramDB21";
+	private $password="";
 	private $port="3306";
 	
 	/*
