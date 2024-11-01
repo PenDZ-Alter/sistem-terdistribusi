@@ -6,7 +6,7 @@ Pada folder `Server`,
 Copy dan Replace semua data ke dalam folder `htdocs`.
 Kemudian, jalankan perintah berikut : 
 ```bash
-cd ~ && sudo curl -s https://getcomposer.org/installer | /opt/lampp/bin/php && sudo ln -s /opt/lampp/bin/php /usr/local/bin/php && sudo mv composer.phar /usr/local/bin/composer && cd /opt/lampp/lampp && composer install
+cd ~ && sudo curl -s https://getcomposer.org/installer | /opt/lampp/bin/php && sudo ln -s /opt/lampp/bin/php /usr/local/bin/php && sudo mv composer.phar /usr/local/bin/composer && cd ~/htdocs && composer install
 ```
 Jangan lupa untuk memasukan password user debian/linux anda.
 
