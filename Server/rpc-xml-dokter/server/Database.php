@@ -1,18 +1,25 @@
 <?php
 error_reporting(1);
+require_once "../../load_env.php";
 
 class Database
 {
-  private $host = "192.168.194.242";
-  private $dbname = "uts";
-  private $user = "root";
-  private $password = "QuadgramDB21";
-  private $port = "3306";
+  private $host;
+  private $user;
+  private $password;
+  private $port;
   private $conn;
+
+  private $dbname = "uts";
 
   // function that gets loaded when the class is instantiated
   public function __construct() // Change to __construct
   {
+    $this->host = $_ENV['HOST'] ?? "localhost";
+		$this->user = $_ENV['USER'] ?? "root";
+		$this->password = $_ENV['PASS'] ?? "";
+		$this->port = $_ENV['PORT'] ?? "3306";
+
     try {
       // connect to the database
       $this->conn = new PDO("mysql:host=$this->host;port=$this->port;dbname=$this->dbname;charset=utf8", $this->user, $this->password);

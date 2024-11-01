@@ -1,17 +1,24 @@
 <?php
 error_reporting(1);
+require_once "../../load_env.php";
 
 class DatabaseSoap
 {
-  private $host = '192.168.56.2';
-  private $dbname = 'toko';
-  private $user = 'root';
-  private $pass = '';
-  private $port = '3306';
+  private $host;
+  private $user;
+  private $pass;
+  private $port;
   private $conn;
+  
+  private $dbname = 'toko';
 
   public function __construct()
   {
+    $this->host = $_ENV['HOST'] ?? "localhost";
+		$this->user = $_ENV['USER'] ?? "root";
+		$this->pass = $_ENV['PASS'] ?? "";
+		$this->port = $_ENV['PORT'] ?? "3306";
+
     try {
       // connect to the database
       $this->conn = new PDO("mysql:host=$this->host;port=$this->port;dbname=$this->dbname;charset=utf8", $this->user, $this->pass);

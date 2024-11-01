@@ -1,26 +1,34 @@
 <?php
+require_once "../../load_env.php";
+
 class database
-{	private $host="192.168.194.242";	
+{	private $host;	
 	private $dbname="serviceserver";	
 	private $conn;
 
 	// koneksi ke database mysql
 	private $driver="mysql";
-	private $user="root";
-	private $password="QuadgramDB21";
-	private $port="3306";
+	private $user;
+	private $password;
+	private $port;
 	
 	/*
 	// koneksi ke database postgresql
 	private $driver="pgsql";
-	private $user="postgres";
-	private $password="postgres";
+	private $user;
+	private $password;
 	private $port="5432";
 	*/
 	
 	// function yang pertama kali di-load saat class dipanggil
 	public function __construct()
-	{	// koneksi database
+	{	
+		$this->host = $_ENV['HOST'] ?? "localhost";
+		$this->user = $_ENV['USER'] ?? "root";
+		$this->password = $_ENV['PASS'] ?? "";
+		$this->port = $_ENV['PORT'] ?? "3306";
+
+		// koneksi database
 		try
 		{	if ($this->driver == 'mysql')
 			{	$this->conn = new PDO("mysql:host=$this->host;port=$this->port;dbname=$this->dbname;charset=utf8",$this->user,$this->password);	

@@ -1,18 +1,25 @@
 <?php
-error_reporting(1);
+error_reporting(E_ALL);
+require_once "../../load_env.php";
 
 class Database
 {
-  private $host = "192.168.56.2";
-  private $dbname = "toko";
-  private $user = "root";
-  private $password = "";
-  private $port = "3306";
+  private $host;
+  private $user;
+  private $password;
+  private $port;
   private $conn;
+
+  private $dbname = "toko";
 
   // function that gets loaded when the class is instantiated
   public function __construct() // Change to __construct
   {
+    $this->host = $_ENV['HOST'] ?? "localhost";
+		$this->user = $_ENV['USER'] ?? "root";
+		$this->password = $_ENV['PASS'] ?? "";
+		$this->port = $_ENV['PORT'] ?? "3306";
+
     try {
       // connect to the database
       $this->conn = new PDO("mysql:host=$this->host;port=$this->port;dbname=$this->dbname;charset=utf8", $this->user, $this->password);

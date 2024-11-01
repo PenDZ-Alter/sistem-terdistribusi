@@ -1,15 +1,25 @@
 <?php
+require_once "../../load_env.php";
+
 class Database
-{	private $host="192.168.194.242";	
-	private $dbname="serviceserver";	
-	private $user="root";
-	private $password="QuadgramDB21";
-	private $port="3306";
+{	
+	private $host;
+	private $user;
+	private $password;
+	private $port;
 	private $conn;
+
+	private $dbname="serviceserver";
 	
 	// function yang pertama kali di-load saat class dipanggil
 	public function __construct()
-	{	// koneksi database
+	{	
+		$this->host = $_ENV['HOST'] ?? "localhost";
+		$this->user = $_ENV['USER'] ?? "root";
+		$this->password = $_ENV['PASS'] ?? "";
+		$this->port = $_ENV['PORT'] ?? "3306";
+		
+		// koneksi database
 		try
 		{	$this->conn = new PDO("mysql:host=$this->host;port=$this->port;dbname=$this->dbname;charset=utf8",$this->user,$this->password);		
 		} catch (PDOException $e)
