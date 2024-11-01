@@ -2,6 +2,7 @@
 Ini merupakan data data dari mata kuliah Sistem Terdistribusi & Keamanan UIN Malang
 
 ## NOTES untuk Server
+Pada folder `Server`,
 Copy dan Replace semua data ke dalam folder `htdocs`.
 Kemudian, jalankan perintah berikut : 
 ```bash
