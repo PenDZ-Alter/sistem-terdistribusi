@@ -3,7 +3,7 @@ Ini merupakan data data dari mata kuliah Sistem Terdistribusi & Keamanan UIN Mal
 
 ## Getting Started (Setup your credentials data)
 Pada folder `Server` dan `Client`,
-Copy dan Replace semua data ke dalam folder `htdocs`.
+Copy dan Replace semua data ke dalam folder `htdocs`. <br>
 Khusus untuk server, jalankan perintah berikut : 
 ```bash
 cd ~ && sudo apt install curl gnupg2 -y && sudo curl -s https://getcomposer.org/installer | /opt/lampp/bin/php && sudo ln -s /opt/lampp/bin/php /usr/local/bin/php && sudo mv composer.phar /usr/local/bin/composer && cd ~/htdocs && composer install
@@ -11,7 +11,7 @@ cd ~ && sudo apt install curl gnupg2 -y && sudo curl -s https://getcomposer.org/
 Jangan lupa untuk memasukan password user debian/linux anda.
 
 khusus untuk client (yang menggunakan docker) : <br>
-Installasi _images_ xampp pada docker : 
+Installasi _images_ xampp pada docker : <br>
 Jalankan perintah berikut : 
 ```bash
 docker pull tomsik68/xampp:<versi_xampp>
@@ -22,7 +22,7 @@ docker pull tomsik68/xampp:<versi_xampp>
 # Start from tomsik68/xampp
 FROM tomsik68/xampp:<versi_xampp>
 ```
-Ubah `versi_xampp` tersebut saa dengan perintah sebelumnya
+Ubah `versi_xampp` tersebut sama dengan perintah sebelumnya
 
 Contoh penggunaan : 
 ```bash
@@ -44,7 +44,7 @@ Replace `nama-build` dan `nama-container` sesuai yang anda inginkan! dan, copy p
 Contoh penggunaan : 
 ```bash
 docker build -t xamppbuild .
-docker run --name xampp7 -p 8080:80 -p 3307:3306 -p 2222:22 -d -v <linker-htdocs-folder>:/www xampp7
+docker run --name xampp7 -p 8080:80 -p 3307:3306 -p 2222:22 -d -v D\htdocs:/www xampp7
 ```
 
 ## NOTES!
