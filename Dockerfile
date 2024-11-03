@@ -1,5 +1,5 @@
 # Start from tomsik68/xampp
-FROM tomsik68/xampp:7
+FROM tomsik68/xampp:<versi_xampp>
 
 # Set working directory to the XAMPP web root
 WORKDIR /opt/lampp/htdocs
