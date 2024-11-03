@@ -134,7 +134,7 @@ class ClientJWT
   }
 }
 
-$url = 'https://server.pendz-web.my.id/jwt-toko/server/server.php';
+$url = 'http://192.168.56.2/jwt-toko/server/server.php';
 $abc = new ClientJWT($url);
 
 ?>

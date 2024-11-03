@@ -82,4 +82,4 @@ Ada beberapa hal yang perlu di perhatikan!
 
 
 ## IMPORTANT NOTES
-Jangan lupa untuk memperbaruhi link url anda pada `Client` sesuai dengan alamat IP atau host dari `Server`!! url pada kode tersebut hanyalah contoh penggunaan ke server.
+Jangan lupa untuk menyesuaikan link url anda pada `Client` sesuai dengan alamat IP atau host dari `Server`!! url pada kode tersebut hanyalah contoh penggunaan ke server.

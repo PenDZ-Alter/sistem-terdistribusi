@@ -52,6 +52,6 @@ class RPCClient
 }
 
 // URL Server
-$url = 'https://server.pendz-web.my.id/rpc-xml-dokter/server/server.php';
+$url = 'http://192.168.56.2/rpc-xml-dokter/server/server.php';
 $abc = new RPCClient($url);
 ?>

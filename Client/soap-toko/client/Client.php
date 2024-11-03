@@ -61,7 +61,7 @@ class Client
 }
 
 // URI and Location Server
-$uri = 'https://server.pendz-web.my.id';
+$uri = 'http://192.168.56.2';
 $location = $uri . '/soap-toko/server/server.php';
 
 // Create new object

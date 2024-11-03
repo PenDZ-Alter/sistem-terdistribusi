@@ -120,7 +120,7 @@ class Client
 }
 
 // uri dan location server
-$uri = 'https://server.pendz-web.my.id';
+$uri = 'http://192.168.56.2';
 $location = $uri.'/soap-mahasiswa/server/server.php';
 // buat objek baru dari class Client
 $objek = new Client($uri,$location);

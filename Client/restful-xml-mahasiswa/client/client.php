@@ -189,7 +189,7 @@ class Client
 	}
 }
 
-$url = 'https://server.pendz-web.my.id/restful-xml-mahasiswa/server/server.php';
+$url = 'http://192.168.56.2/restful-xml-mahasiswa/server/server.php';
 // buat objek baru dari class Client
 $abc = new Client($url);
 ?>

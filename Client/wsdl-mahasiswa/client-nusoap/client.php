@@ -114,7 +114,7 @@ class Client
 	}
 }
 
-$api = "https://server.pendz-web.my.id/wsdl-mahasiswa/server/server.php?wsdl";
+$api = "http://192.168.56.2/wsdl-mahasiswa/server/server.php?wsdl";
 
 // buat objek baru dari class Client
 $objek = new Client($api);

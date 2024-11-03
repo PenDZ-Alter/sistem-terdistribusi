@@ -52,6 +52,6 @@ class RPCClient
 }
 
 // URL Server
-$url = 'https://server.pendz-web.my.id/rpc-xml-toko/server/server.php?aksi=tampil';
+$url = 'http://192.168.56.2/rpc-xml-toko/server/server.php?aksi=tampil';
 $abc = new RPCClient($url);
 ?>

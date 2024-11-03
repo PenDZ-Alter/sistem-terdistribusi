@@ -160,7 +160,7 @@ class client
 	}
 }
 
-$url = 'https://server.pendz-web.my.id/rpc-xml-mahasiswa/server/server.php';
+$url = 'http://192.168.56.2/rpc-xml-mahasiswa/server/server.php';
 // buat objek baru dari class Client
 $bb = new client($url);
 ?>
