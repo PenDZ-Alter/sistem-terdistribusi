@@ -51,7 +51,7 @@ docker run --name xampp7 -p 8080:80 -p 3307:3306 -p 2222:22 -d -v D:\htdocs:/www
 Ada beberapa hal yang perlu di perhatikan!
 1. Sesuaikan alamat IP, Password, User, port pada file `.env` atau `.env.example` (Hal ini berlaku pada server dan client)
     ```env
-    HOST= # IP Address or Host of Server
+    HOST= # IP Address or Host
     USER= # User from your SQL
     PASS= # Pass from your SQL
     PORT= # Port of your SQL (Empty for default to 3306)
