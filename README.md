@@ -74,7 +74,7 @@ Ada beberapa hal yang perlu di perhatikan!
       ```
       Masukan password user linux anda dan kemudian jalankan perintah ssl sebelumnya!
     
-    - Copy RSA Key ke Debian Server pada folder `jwt-toko` file `core.php` dan pada variabel `$key`
+    - Copy RSA Key ke Debian Server pada folder `jwt-toko` dan `jwt-mahasiswa` file `core.php` dan pada variabel `$key`
 3. Abaikan error dan jangan ubah kode apapun pada file `nusoap.php` pada visual studio code
 4. Untuk branch ini, support untuk PHP 7.1.x+
     - Terkhusus untuk PHP 8.x, support semua tipe kecuali **RPC-XML**. Anda harus menginstall plugin **RPC-XML** terlebih dahulu.
