@@ -1,7 +1,9 @@
 <?php
 error_reporting(1); // error ditampilkan
+require '../../load_env.php';
+
 class Client
-{	private $host="localhost";	
+{	private $host;	
 	private $dbname="serviceclient";
 	private $conn;
 	private $url;
@@ -9,9 +11,9 @@ class Client
 	
 	// koneksi ke database mysql di client
 	private $driver="mysql";
-	private $user="root";
-	private $password="";
-	private $port="3306";
+	private $user;
+	private $password;
+	private $port;
 	
 	/*
 	// koneksi ke database postgresql di client
@@ -23,7 +25,13 @@ class Client
 
 	// diload pertama kali
 	public function __construct($url)
-	{	$this->url = $url;
+	{	
+		$this->host = $_ENV['HOST'] === null ? $_ENV['HOST'] : "localhost";
+		$this->user = $_ENV['USER'] === null ? $_ENV['USER'] : "root";
+		$this->password = $_ENV['PASS'] === null ? $_ENV['PASS'] : "";
+		$this->port = $_ENV['PORT'] === null ? $_ENV['PORT'] : "3306";
+
+		$this->url = $url;
 		try
 		{	if ($this->driver == 'mysql')
 			{	$this->conn = new PDO("mysql:host=$this->host;port=$this->port;dbname=$this->dbname;charset=utf8",$this->user,$this->password);	
@@ -31,12 +39,13 @@ class Client
 			{	$this->conn = new PDO("pgsql:host=$this->host;port=$this->port;dbname=$this->dbname;user=$this->user;password=$this->password");	
 			}	
 		} catch (PDOException $e)
-		{	echo "Koneksi gagal";			
+		{	echo "Koneksi gagal\n";			
 		}
 
 		// menghapus variable dari memory
 		unset($url);
-	}	
+	}
+
 
 	public function login($data)
 	{	$data = '{	
@@ -195,7 +204,7 @@ class Client
 	}
 }
 
-$url = 'http://192.168.194.242/jwt-mahasiswa/server/server.php';
+$url = 'https://server.pendz-web.my.id/jwt-mahasiswa/server/server.php';
 // buat objek baru dari class Client
 $abc = new Client($url);
 ?>

@@ -120,7 +120,7 @@ class ClientRESTJSON
   }
 }
 
-$url = 'http://192.168.56.2/restful-xml-toko/server/server.php';
+$url = 'https://server.pendz-web.my.id/restful-xml-toko/server/server.php';
 $abc = new ClientRESTJSON($url);
 
 ?>

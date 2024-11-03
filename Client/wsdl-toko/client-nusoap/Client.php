@@ -57,7 +57,7 @@ class ClientWSDL
   }
 }
 
-$url = 'http://192.168.56.2/wsdl-toko/server/server.php?wsdl';
+$url = 'https://server.pendz-web.my.id/wsdl-toko/server/server.php?wsdl';
 $abc = new ClientWSDL($url);
 
 ?>

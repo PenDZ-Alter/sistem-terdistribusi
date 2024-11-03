@@ -1,17 +1,18 @@
 <?php
 error_reporting(1); // error ditampilkan
 require_once('nusoap.php');
+require '../../load_env.php';
 
 class Client
-{	private $host="localhost";	
+{	private $host;	
 	private $dbname="serviceclient";
 	private $api;
 	
 	// koneksi ke database mysql di client
 	private $driver="mysql";
-	private $user="root";
-	private $password="";
-	private $port="3306";
+	private $user;
+	private $password;
+	private $port;
 	
 	/*
 	// koneksi ke database postgresql di client
@@ -23,7 +24,13 @@ class Client
 
 	// function yang pertama kali di-load saat class dipanggil
 	public function __construct($api)
-	{	// buat objek baru dari class nusoap client
+	{	
+		$this->host = $_ENV['HOST'] === null ? $_ENV['HOST'] : "localhost";
+		$this->user = $_ENV['USER'] === null ? $_ENV['USER'] : "root";
+		$this->password = $_ENV['PASS'] === null ? $_ENV['PASS'] : "";
+		$this->port = $_ENV['PORT'] === null ? $_ENV['PORT'] : "3306";
+		
+		// buat objek baru dari class nusoap client
 		$this->api = new nusoap_client($api,true);
 		// koneksi database lokal client
 		try
@@ -107,7 +114,7 @@ class Client
 	}
 }
 
-$api = "http://192.168.194.242/wsdl-mahasiswa/server/server.php?wsdl";
+$api = "https://server.pendz-web.my.id/wsdl-mahasiswa/server/server.php?wsdl";
 
 // buat objek baru dari class Client
 $objek = new Client($api);

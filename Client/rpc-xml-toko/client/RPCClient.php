@@ -39,7 +39,7 @@ class RPCClient
       'header' => 'Content-Type: text/xml; charset=UTF-8',
     )));
 
-    $response = file_get_contents($this->url."?id_barang=".$id_barang."&aksi=tampil", false, $context);
+    $response = file_get_contents($this->url."&id_barang=".$id_barang, false, $context);
     $data = xmlrpc_decode($response);
     return $data;
     unset($id_barang, $context, $response, $data);
@@ -52,6 +52,6 @@ class RPCClient
 }
 
 // URL Server
-$url = 'http://192.168.56.2/rpc-xml-toko/server/server.php';
+$url = 'https://server.pendz-web.my.id/rpc-xml-toko/server/server.php?aksi=tampil';
 $abc = new RPCClient($url);
 ?>

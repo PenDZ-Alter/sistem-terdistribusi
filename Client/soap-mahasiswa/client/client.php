@@ -1,15 +1,17 @@
 <?php
 error_reporting(1); // error ditampilkan
+require '../../load_env.php';
+
 class Client
-{	private $host="localhost";	
+{	private $host;	
 	private $dbname="serviceclient";
 	private $conn,$options,$api;
 	
 	// koneksi ke database mysql di client
 	private $driver="mysql";
-	private $user="root";
-	private $password="";
-	private $port="3306";
+	private $user;
+	private $password;
+	private $port;
 	
 	/*
 	// koneksi ke database postgresql di client
@@ -21,7 +23,13 @@ class Client
 
 	// function yang pertama kali di-load saat class dipanggil
 	public function __construct($uri,$location)
-	{	// set uri SOAP server
+	{	
+		$this->host = $_ENV['HOST'] === null ? $_ENV['HOST'] : "localhost";
+		$this->user = $_ENV['USER'] === null ? $_ENV['USER'] : "root";
+		$this->password = $_ENV['PASS'] === null ? $_ENV['PASS'] : "";
+		$this->port = $_ENV['PORT'] === null ? $_ENV['PORT'] : "3306";
+		
+		// set uri SOAP server
 		$this->options = array('uri' => $uri,'location' => $location);
 		// buat objek baru dari class SOAP Client
 		$this->api = new SoapClient(NULL, $this->options);
@@ -112,7 +120,7 @@ class Client
 }
 
 // uri dan location server
-$uri = 'http://192.168.194.242';
+$uri = 'https://server.pendz-web.my.id';
 $location = $uri.'/soap-mahasiswa/server/server.php';
 // buat objek baru dari class Client
 $objek = new Client($uri,$location);

@@ -1,16 +1,17 @@
 <?php
 error_reporting(1); // value 1 error ditampilkan, value 0 error tidak ditampilkan
+require '../../load_env.php';
 
 class client
-{	private $host="localhost";	
+{	private $host;	
 	private $dbname="serviceclient";
 	private $conn,$url;
 	
 	// koneksi ke database mysql di client
 	private $driver="mysql";
-	private $user="root";
-	private $password="";
-	private $port="3306";
+	private $user;
+	private $password;
+	private $port;
 	
 	/*
 	// koneksi ke database postgresql di client
@@ -22,7 +23,13 @@ class client
 
 	// function yang pertama kali di-load saat class dipanggil
 	public function __construct($url)
-	{	$this->url = $url;
+	{	
+		$this->host = $_ENV['HOST'] === null ? $_ENV['HOST'] : "localhost";
+		$this->user = $_ENV['USER'] === null ? $_ENV['USER'] : "root";
+		$this->password = $_ENV['PASS'] === null ? $_ENV['PASS'] : "";
+		$this->port = $_ENV['PORT'] === null ? $_ENV['PORT'] : "3306";
+		
+		$this->url = $url;
 		// koneksi database lokal client
 		try
 		{	if ($this->driver == 'mysql')
@@ -153,7 +160,7 @@ class client
 	}
 }
 
-$url = 'http://192.168.194.242/rpc-xml-mahasiswa/server/server.php';
+$url = 'https://server.pendz-web.my.id/rpc-xml-mahasiswa/server/server.php';
 // buat objek baru dari class Client
 $bb = new client($url);
 ?>
