@@ -1,7 +1,7 @@
 # sistem-terdistribusi
 Ini merupakan data data dari mata kuliah Sistem Terdistribusi & Keamanan UIN Malang
 
-## Getting Started (Setup your credentials data)
+## Getting Started
 Pada folder `Server` dan `Client`,
 Copy dan Replace semua data ke dalam folder `htdocs`. <br>
 Khusus untuk server, jalankan perintah berikut : 
