@@ -79,3 +79,7 @@ Ada beberapa hal yang perlu di perhatikan!
 4. Untuk branch ini, support untuk PHP 7.1.x+
     - Terkhusus untuk PHP 8.x, support semua tipe kecuali **RPC-XML**. Anda harus menginstall plugin **RPC-XML** terlebih dahulu.
     - Terkhusus untuk PHP 7.0.x, 5.x dan versi sebelumnya, versi ini tidak di dukung oleh dotenv karena pada branch ini menggunakan composer package `vlucas/phpdotenv`.
+
+
+## IMPORTANT NOTES
+Jangan lupa untuk memperbaruhi link url anda pada `Client` sesuai dengan alamat IP atau host dari `Server`!! url pada kode tersebut hanyalah contoh penggunaan ke server.
