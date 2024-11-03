@@ -44,7 +44,7 @@ Replace `nama-build` dan `nama-container` sesuai yang anda inginkan! dan, copy p
 Contoh penggunaan : 
 ```bash
 docker build -t xamppbuild .
-docker run --name xampp7 -p 8080:80 -p 3307:3306 -p 2222:22 -d -v D\htdocs:/www xampp7
+docker run --name xampp7 -p 8080:80 -p 3307:3306 -p 2222:22 -d -v D:\htdocs:/www xampp7
 ```
 
 ## NOTES!
